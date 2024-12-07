@@ -13,10 +13,10 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        Debug.Log("Player Health: " + currentHealth);
+        Debug.Log(gameObject.name + currentHealth);
         if (currentHealth <= 0)
         {
-            Debug.Log("Player is dead!");
+            Debug.Log(gameObject.name + "is dead");
         }
     }
 }

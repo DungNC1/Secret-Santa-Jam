@@ -2,12 +2,17 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public Transform player;
     public float moveSpeed = 2f;
     public int damage = 1;
 
+    private Transform player;
     private Rigidbody2D rb;
     private Vector2 movement;
+
+    private void Awake()
+    {
+        player = GameObject.FindWithTag("Player").transform;
+    }
 
     void Start()
     {

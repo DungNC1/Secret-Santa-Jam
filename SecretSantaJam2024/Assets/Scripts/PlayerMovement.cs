@@ -3,23 +3,31 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public bool FacingLeft { get { return facingLeft; } set { facingLeft = value; } }
+
     public float moveSpeed = 5f;
     public float dodgeSpeed = 10f;
     public float dodgeDuration = 0.2f;
     public float dodgeCooldown = 1f;
 
     private Rigidbody2D rb;
+    private SpriteRenderer mySpriteRender;
     private Vector2 moveInput;
     private bool isDodging = false;
     private float nextDodgeTime;
 
+    private bool facingLeft = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        mySpriteRender = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
+        AdjustPlayerFacingDirection();
+
         if (!isDodging)
         {
             float moveX = Input.GetAxisRaw("Horizontal");
@@ -54,5 +62,26 @@ public class PlayerMovement : MonoBehaviour
         }
 
         isDodging = false;
+    }
+
+    private void AdjustPlayerFacingDirection()
+    {
+        Vector3 mousePos = Input.mousePosition;
+        Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
+
+        if (mousePos.x < playerScreenPoint.x)
+        {
+            Vector2 scale = transform.localScale;
+            scale.x = -1f;
+            transform.localScale =scale;
+            FacingLeft = true;
+        }
+        else
+        {
+            Vector2 scale = transform.localScale;
+            scale.x = 1f;
+            transform.localScale = scale;
+            FacingLeft = false;
+        }
     }
 }
