@@ -260,6 +260,7 @@ GameObject:
   - component: {fileID: 287695942}
   - component: {fileID: 287695943}
   - component: {fileID: 287695944}
+  - component: {fileID: 287695945}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -446,14 +447,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 287695937}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55bca690f66ffeb4f9451546e56a3bfe, type: 3}
+  m_Script: {fileID: 11500000, guid: 62a3bd35e2b39b745890cfa0a51cdc44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slashAnimPrefab: {fileID: 0}
-  slashAnimSpawnPoint: {fileID: 0}
-  weaponCollider: {fileID: 0}
+  availableSkills:
+  - {fileID: 11400000, guid: a34a0c9ec0f64e04e8e13c9a85c196c7, type: 2}
+--- !u!114 &287695945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287695937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c96cc3456551d2e438e9325132530e38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxMana: 100
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,6 +821,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1781041508894157605, guid: bcf7f79f498005d41a9b96bf787f3a78, type: 3}
       propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781041508894157605, guid: bcf7f79f498005d41a9b96bf787f3a78, type: 3}
+      propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
