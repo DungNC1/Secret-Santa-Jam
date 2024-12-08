@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: IceBlast
   m_EditorClassIdentifier: 
   skillName: IceBlast
-  manaCost: 25
+  manaCost: 5
   cooldown: 5
   iceBlastEffectPrefab: {fileID: 510307955731157480, guid: 8c9f087ad0f423041b050e40599ec1b1, type: 3}
   freezeDuration: 3

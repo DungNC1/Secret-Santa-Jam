@@ -1,17 +1,14 @@
 using System.Collections;
 using UnityEngine;
-using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class IceBlastEffect : MonoBehaviour
 {
     [SerializeField] private float laserGrowTime = 0.4f;
 
     private bool isGrowing = true;
-    private float laserRange;
+    private float laserRange = 10;
     private SpriteRenderer spriteRenderer;
     private CapsuleCollider2D capsuleCollider2D;
-    private Vector3 direction;
-    private float speed;
 
     private void Awake()
     {
@@ -24,11 +21,19 @@ public class IceBlastEffect : MonoBehaviour
         LaserFaceMouse();
     }
 
+    private void Update()
+    {
+        transform.position += transform.right * 5 * Time.deltaTime;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Wall") && !other.isTrigger)
         {
             isGrowing = false;
+        } else if(other.gameObject.CompareTag("Enemy"))
+        {
+            other.gameObject.GetComponent<EnemyMovement>().Freeze(3);
         }
     }
 
@@ -65,19 +70,5 @@ public class IceBlastEffect : MonoBehaviour
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
         Vector2 direction = transform.position - mousePosition;
         transform.right = -direction;
-    }
-
-    void Update()
-    {
-        transform.Translate(Vector3.right * Time.deltaTime * 5);
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            collision.gameObject.GetComponent<EnemyMovement>().Freeze(3);
-            Destroy(gameObject);
-        }
     }
 }

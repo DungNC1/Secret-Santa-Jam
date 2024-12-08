@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
     private Transform player;
     private Rigidbody2D rb;
     private Vector2 movement;
+    private Knockback knockback;
 
     // Freeze variables
     private bool isFrozen = false;
@@ -16,6 +17,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Awake()
     {
+        knockback = GetComponent<Knockback>();
         player = GameObject.FindWithTag("Player").transform;
     }
 
@@ -27,7 +29,13 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        rb.gravityScale = 0;
+        rb.gravityScale = 0; // Ensure gravity is disabled for top-down movement
+
+        // Prioritize knockback logic
+        if (knockback.gettingKnockedBack)
+        {
+            return; // Skip movement and freezing logic if being knocked back
+        }
 
         if (isFrozen)
         {
@@ -49,7 +57,7 @@ public class EnemyMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!isFrozen && player != null)
+        if (!isFrozen && player != null && !knockback.gettingKnockedBack)
         {
             rb.MovePosition((Vector2)transform.position + (movement * moveSpeed * Time.fixedDeltaTime));
         }

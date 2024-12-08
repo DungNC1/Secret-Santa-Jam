@@ -13,10 +13,12 @@ GameObject:
   - component: {fileID: 4851005919580717129}
   - component: {fileID: 824479915936183350}
   - component: {fileID: 5994321263897126409}
-  - component: {fileID: 5862673050198952257}
+  - component: {fileID: 4531762980218211478}
+  - component: {fileID: 3886845515818200615}
+  - component: {fileID: 3595061266003760053}
   m_Layer: 7
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,7 +119,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -127,7 +129,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &5994321263897126409
 BoxCollider2D:
@@ -174,7 +176,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5862673050198952257
+--- !u!114 &4531762980218211478
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,7 +185,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 1781041508894157605}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c45efc98bb8fded478ab828e9fea2306, type: 3}
+  m_Script: {fileID: 11500000, guid: b0f5bf6a26090f94e8563f726b431683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  knockBackTime: 0.2
+--- !u!114 &3886845515818200615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781041508894157605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e9c48804dff09f4a969f4bad70c1fbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 5
+--- !u!114 &3595061266003760053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781041508894157605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed000601d1d222e4abaf288c4724a678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whiteFlashMat: {fileID: 2100000, guid: 931b2007dd485e846b074156be7d9bbc, type: 2}
+  restoreDefaultMatTime: 0.1
