@@ -19,6 +19,11 @@ public class PlayerMovement : MonoBehaviour
 
     private bool facingLeft = false;
 
+    private void Awake()
+    {
+        playerMana = GetComponent<PlayerMana>();
+    }
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
