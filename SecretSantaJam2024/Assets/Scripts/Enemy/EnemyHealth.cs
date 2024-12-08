@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private int startingHealth = 3;
+    [SerializeField] private GameObject[] loot;
 
     private int currentHealth;
     private Knockback knockback;
@@ -32,6 +33,14 @@ public class EnemyHealth : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
+            int chanceOfDroppingLoot = Random.Range(0, 5);
+
+            if(chanceOfDroppingLoot == 1)
+            {
+                int randomLootIdx = Random.Range(0, loot.Length);
+                Instantiate(loot[randomLootIdx], transform.position, Quaternion.identity);
+            }
+
             Destroy(gameObject);
         }
     }

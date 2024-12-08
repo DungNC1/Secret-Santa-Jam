@@ -71,12 +71,12 @@ public class PlayerCombat : MonoBehaviour
         if (mousePos.x < playerScreenPoint.x)
         {
             transform.rotation = Quaternion.Euler(0, -180, angle);
-            weaponCollider.transform.rotation = Quaternion.Euler(0, -180, 0);
+            //weaponCollider.transform.rotation = Quaternion.Euler(0, -180, 0);
         }
         else
         {
             transform.rotation = Quaternion.Euler(0, 0, angle);
-            weaponCollider.transform.rotation = Quaternion.Euler(0, 0, 0);
+            //weaponCollider.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
 }

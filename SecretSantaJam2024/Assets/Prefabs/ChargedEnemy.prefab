@@ -188,6 +188,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 5
+  loot:
+  - {fileID: 8949473686644394565, guid: f5a2bd4c96d23f7409d498020230f03d, type: 3}
+  - {fileID: 786939197290239670, guid: d4ab37b63b64c1440b95adff838117d9, type: 3}
+  - {fileID: 1273924361401648334, guid: bdb3126bad3d6a745950dbec5ee38287, type: 3}
 --- !u!114 &2832759035078311098
 MonoBehaviour:
   m_ObjectHideFlags: 0

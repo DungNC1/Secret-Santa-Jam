@@ -11,17 +11,18 @@ public class PlayerMovement : MonoBehaviour
     public float dodgeCooldown = 1f;
 
     private Rigidbody2D rb;
-    private SpriteRenderer mySpriteRender;
+    private PlayerMana playerMana;
     private Vector2 moveInput;
     private bool isDodging = false;
     private float nextDodgeTime;
+    private float originalMovespeed;
 
     private bool facingLeft = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        mySpriteRender = GetComponent<SpriteRenderer>();
+        originalMovespeed = moveSpeed;
     }
 
     void Update()
@@ -54,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
         isDodging = true;
         nextDodgeTime = Time.time + dodgeCooldown;
         float startTime = Time.time;
+        playerMana.UseMana(5);
 
         while (Time.time < startTime + dodgeDuration)
         {
@@ -83,5 +85,12 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = scale;
             FacingLeft = false;
         }
+    }
+    
+    public IEnumerator MovementBoost(float speed)
+    {
+        moveSpeed = speed;
+        yield return new WaitForSeconds(10);
+        moveSpeed = originalMovespeed;
     }
 }
