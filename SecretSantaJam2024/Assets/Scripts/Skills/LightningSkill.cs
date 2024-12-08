@@ -1,14 +1,13 @@
-using System.Collections;
 using UnityEngine;
+using System.Collections;
 
 [CreateAssetMenu(menuName = "Skills/Lightning Strike")]
 public class LightningStrikeSkill : Skill
 {
     public GameObject lightningStrikeEffectPrefab;
-    public int damage = 3;
+    public float damage = 50f;
     public float strikeDelay = 0.1f;
     public int maxEnemies = 5;
-    public LayerMask enemyLayers;
 
     public override void UseSkill()
     {
@@ -32,10 +31,8 @@ public class LightningStrikeSkill : Skill
             int enemiesToHit = Mathf.Min(maxEnemies, enemies.Length);
             for (int i = 0; i < enemiesToHit; i++)
             {
-                // Apply the lightning strike effect after a short delay
-                Vector3 strikePosition = enemies[i].transform.position + Vector3.up * 10f; // Adjust the height as needed
-                Instantiate(lightningStrikeEffectPrefab, strikePosition, Quaternion.identity);
-                
+                // Instantiate the lightning strike effect at the enemy's position after a short delay
+                CoroutineHelper.Instance.StartCoroutine(SpawnLightningStrike(enemies[i].transform.position, strikeDelay * i));
             }
         }
         else
@@ -44,19 +41,18 @@ public class LightningStrikeSkill : Skill
         }
     }
 
-    private IEnumerator ApplyLightningDamage(Vector3 targetPosition, float delay)
+    private IEnumerator SpawnLightningStrike(Vector3 targetPosition, float delay)
     {
         yield return new WaitForSeconds(delay);
 
-        // Check if the enemy is still there
-        Collider2D hit = Physics2D.OverlapPoint(targetPosition, enemyLayers);
-        if (hit != null && hit.CompareTag("Enemy"))
+        // Instantiate the lightning strike effect
+        GameObject lightningStrikeEffect = Instantiate(lightningStrikeEffectPrefab, targetPosition, Quaternion.identity);
+
+        // Optionally, set the target position for visual alignment if needed
+        LightningStrikeEffect effectScript = lightningStrikeEffect.GetComponent<LightningStrikeEffect>();
+        if (effectScript != null)
         {
-            PlayerHealth enemy = hit.GetComponent<PlayerHealth>();
-            if (enemy != null)
-            {
-                enemy.TakeDamage(damage);
-            }
+            effectScript.SetTarget(targetPosition);
         }
     }
 }

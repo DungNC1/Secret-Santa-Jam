@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60d2dc451a5007e4ca3fc34c7ae0cf31, type: 3}
+  m_Name: LightningStrike
+  m_EditorClassIdentifier: 
+  skillName: LightningStrike
+  manaCost: 50
+  cooldown: 5
+  lightningStrikeEffectPrefab: {fileID: 9035853275963764133, guid: 37ec7b84b2c6ca94e8873d43e14ece60, type: 3}
+  damage: 3
+  strikeDelay: 0.1
+  maxEnemies: 5

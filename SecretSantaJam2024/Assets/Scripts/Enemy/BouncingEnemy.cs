@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BouncingEnemy : MonoBehaviour
@@ -9,11 +10,13 @@ public class BouncingEnemy : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private bool goingUp = true;
 
+    private Knockback knockback;
     private bool touchedGround, touchedRoof, touchedRight, touchedLeft;
     private Rigidbody2D enemyRB;
 
     private void Start()
     {
+        knockback = GetComponent<Knockback>();
         enemyRB = GetComponent<Rigidbody2D>();
     }
 
@@ -24,6 +27,11 @@ public class BouncingEnemy : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(knockback.gettingKnockedBack)
+        {
+            return;
+        }
+
         enemyRB.velocity = moveDirection * moveSpeed;
     }
 
@@ -71,5 +79,13 @@ public class BouncingEnemy : MonoBehaviour
         Gizmos.DrawWireCube(roofCheck.transform.position, roofCheckSize);
         Gizmos.DrawWireCube(rightCheck.transform.position, rightCheckSize);
         Gizmos.DrawWireCube(leftCheck.transform.position, leftCheckSize);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(1);
+        }
     }
 }
