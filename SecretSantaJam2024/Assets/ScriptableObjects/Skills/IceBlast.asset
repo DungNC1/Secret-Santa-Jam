@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e2420cf84296d74bba918e7f969f513, type: 3}
+  m_Name: IceBlast
+  m_EditorClassIdentifier: 
+  skillName: IceBlast
+  manaCost: 25
+  cooldown: 5
+  iceBlastEffectPrefab: {fileID: 510307955731157480, guid: 8c9f087ad0f423041b050e40599ec1b1, type: 3}
+  freezeDuration: 3
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 128

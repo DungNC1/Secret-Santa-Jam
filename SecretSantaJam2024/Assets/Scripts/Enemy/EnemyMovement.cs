@@ -9,6 +9,11 @@ public class EnemyMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
 
+    // Freeze variables
+    private bool isFrozen = false;
+    private float freezeTimer = 0f;
+    private float originalMoveSpeed;
+
     private void Awake()
     {
         player = GameObject.FindWithTag("Player").transform;
@@ -17,10 +22,23 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        originalMoveSpeed = moveSpeed; // Store the original move speed
     }
 
     void Update()
     {
+        rb.gravityScale = 0;
+
+        if (isFrozen)
+        {
+            freezeTimer -= Time.deltaTime;
+            if (freezeTimer <= 0f)
+            {
+                Unfreeze();
+            }
+            return;
+        }
+
         if (player != null)
         {
             Vector3 direction = player.position - transform.position;
@@ -31,10 +49,27 @@ public class EnemyMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (player != null)
+        if (!isFrozen && player != null)
         {
             rb.MovePosition((Vector2)transform.position + (movement * moveSpeed * Time.fixedDeltaTime));
         }
+    }
+
+    public void Freeze(float duration)
+    {
+        isFrozen = true;
+        freezeTimer = duration;
+        moveSpeed = 0f; // Set move speed to 0 to "freeze" the enemy
+        Debug.Log("Enemy frozen!");
+        // Additional logic when frozen (e.g., disable animations, change color)
+    }
+
+    private void Unfreeze()
+    {
+        isFrozen = false;
+        moveSpeed = originalMoveSpeed; // Restore the original move speed
+        Debug.Log("Enemy unfrozen!");
+        // Additional logic when unfrozen (e.g., re-enable animations, revert color)
     }
 
     void OnCollisionEnter2D(Collision2D collision)
