@@ -17,6 +17,7 @@ MonoBehaviour:
   cooldown: 5
   iceBlastEffectPrefab: {fileID: 510307955731157480, guid: 8c9f087ad0f423041b050e40599ec1b1, type: 3}
   freezeDuration: 3
+  laserRange: 10
   enemyLayers:
     serializedVersion: 2
     m_Bits: 128
