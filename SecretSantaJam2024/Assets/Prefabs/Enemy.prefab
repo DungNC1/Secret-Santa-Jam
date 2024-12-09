@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 4531762980218211478}
   - component: {fileID: 3886845515818200615}
   - component: {fileID: 3595061266003760053}
-  - component: {fileID: 2345355739866660134}
+  - component: {fileID: -8621826533888942208}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
@@ -115,7 +115,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.7660377, g: 0.7660377, b: 0.7660377, a: 1}
+  m_Color: {r: 1, g: 0.8390293, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whiteFlashMat: {fileID: 2100000, guid: 931b2007dd485e846b074156be7d9bbc, type: 2}
   restoreDefaultMatTime: 0.1
---- !u!114 &2345355739866660134
+--- !u!114 &-8621826533888942208
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -250,23 +250,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1781041508894157605}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34f1b1bf32b06db4ca8e888d0d0fde85, type: 3}
+  m_Script: {fileID: 11500000, guid: c5f4132e6d7ca364891c83893e2f6ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
-  moveDirection: {x: 1, y: 0.25}
-  rightCheck: {fileID: 4247250385397752864}
-  leftCheck: {fileID: 3173150122257325500}
-  roofCheck: {fileID: 1232709929567133782}
-  groundCheck: {fileID: 3046326425251286583}
-  rightCheckSize: {x: 0.2, y: 1}
-  leftCheckSize: {x: 0.2, y: 1}
-  roofCheckSize: {x: 1, y: 0.2}
-  groundCheckSize: {x: 1, y: 0.2}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  goingUp: 1
+  moveSpeed: 2
+  damage: 1
 --- !u!1 &3046326425251286583
 GameObject:
   m_ObjectHideFlags: 0
