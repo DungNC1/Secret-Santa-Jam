@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public bool FacingLeft { get { return facingLeft; } set { facingLeft = value; } }
 
+    public GameObject ghostTrailPrefab;
     public float moveSpeed = 5f;
     public float dodgeSpeed = 10f;
     public float dodgeDuration = 0.2f;
@@ -12,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private PlayerMana playerMana;
+    private Animator animator;
     private Vector2 moveInput;
     private bool isDodging = false;
     private float nextDodgeTime;
@@ -22,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         playerMana = GetComponent<PlayerMana>();
+        animator = GetComponent<Animator>();
     }
 
     void Start()
@@ -45,6 +48,8 @@ public class PlayerMovement : MonoBehaviour
                 StartCoroutine(Dodge());
             }
         }
+
+        animator.SetFloat("IsMoving", moveInput.magnitude);
     }
 
     void FixedUpdate()
@@ -65,11 +70,23 @@ public class PlayerMovement : MonoBehaviour
         while (Time.time < startTime + dodgeDuration)
         {
             rb.MovePosition(rb.position + moveInput * dodgeSpeed * Time.fixedDeltaTime);
+            CreateGhostTrail();
             yield return null; // Wait for the next frame
         }
 
         isDodging = false;
     }
+
+    private void CreateGhostTrail()
+    {
+        GameObject ghostTrail = Instantiate(ghostTrailPrefab, transform.position, transform.rotation);
+        SpriteRenderer ghostSpriteRenderer = ghostTrail.GetComponent<SpriteRenderer>();
+        SpriteRenderer playerSpriteRenderer = GetComponent<SpriteRenderer>();
+
+        ghostSpriteRenderer.sprite = playerSpriteRenderer.sprite;
+        ghostSpriteRenderer.color = playerSpriteRenderer.color;
+    }
+
 
     private void AdjustPlayerFacingDirection()
     {

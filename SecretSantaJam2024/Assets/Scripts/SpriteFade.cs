@@ -11,6 +11,8 @@ public class SpriteFade : MonoBehaviour
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        StartCoroutine(SlowFadeRoutine());
     }
 
     public IEnumerator SlowFadeRoutine()
