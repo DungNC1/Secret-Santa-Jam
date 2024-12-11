@@ -85,7 +85,7 @@ public class BouncingEnemy : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(1);
+            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(1, transform);
         }
     }
 }

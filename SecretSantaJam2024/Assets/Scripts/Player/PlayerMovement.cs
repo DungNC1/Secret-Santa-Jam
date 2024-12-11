@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float dodgeCooldown = 1f;
 
     private Rigidbody2D rb;
+    private Knockback knockback;
     private PlayerMana playerMana;
     private Animator animator;
     private Vector2 moveInput;
@@ -23,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        knockback = GetComponent<Knockback>();
         playerMana = GetComponent<PlayerMana>();
         animator = GetComponent<Animator>();
     }
@@ -37,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
     {
         AdjustPlayerFacingDirection();
 
-        if (!isDodging)
+        if (!isDodging && !knockback.gettingKnockedBack)
         {
             float moveX = Input.GetAxisRaw("Horizontal");
             float moveY = Input.GetAxisRaw("Vertical");
@@ -54,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!isDodging)
+        if (!isDodging && !knockback.gettingKnockedBack)
         {
             rb.MovePosition(rb.position + moveInput * moveSpeed * Time.fixedDeltaTime);
         }

@@ -15,6 +15,8 @@ public class GingerbreadWarrior : MonoBehaviour
     [SerializeField] private Vector2 mapBoundsMin;
     [SerializeField] private Vector2 mapBoundsMax;
     private float minionSpawnCooldown;
+    private float gingerbreadMinioSpawnCooldown;
+    private float slamCooldown;
 
     private float minionSpawnTimer;
     private Transform player;
@@ -24,7 +26,9 @@ public class GingerbreadWarrior : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
-        minionSpawnCooldown = Random.Range(10, 20);
+        minionSpawnCooldown = Random.Range(5, 15);
+        gingerbreadMinioSpawnCooldown = Random.Range(5, 15);
+        slamCooldown = Random.Range(10, 15);
         minionSpawnTimer = minionSpawnCooldown;
         moveTimer = moveInterval;
         SetRandomTargetPosition();
@@ -33,20 +37,32 @@ public class GingerbreadWarrior : MonoBehaviour
     private void Update()
     {
         minionSpawnTimer -= Time.deltaTime;
+        gingerbreadMinioSpawnCooldown -= Time.deltaTime;
         moveTimer -= Time.deltaTime;
 
         if (minionSpawnTimer <= 0)
         {
             SpawnMarshmallowMinions();
-            SpawnSmallerGingerbreadWarriors();
-            minionSpawnCooldown = Random.Range(10, 20);
+            minionSpawnCooldown = Random.Range(5, 15);
             minionSpawnTimer = minionSpawnCooldown;
+        }
+
+        if(gingerbreadMinioSpawnCooldown <= 0)
+        {
+            SpawnSmallerGingerbreadWarriors();
+            gingerbreadMinioSpawnCooldown = Random.Range(5, 15);
         }
 
         if (moveTimer <= 0)
         {
             SetRandomTargetPosition();
             moveTimer = moveInterval;
+        }
+
+        if(slamCooldown <= 0)
+        {
+            player.GetComponent<Knockback>().GetKnockedBack(transform, 15);
+            slamCooldown = Random.Range(10, 15);
         }
 
         MoveTowardsTargetPosition();
@@ -62,7 +78,7 @@ public class GingerbreadWarrior : MonoBehaviour
 
     private void CandyCaneAttack()
     {
-        player.GetComponent<PlayerHealth>().TakeDamage(candyCaneDamage);
+        player.GetComponent<PlayerHealth>().TakeDamage(candyCaneDamage, transform);
     }
 
     private void SpawnMarshmallowMinions()

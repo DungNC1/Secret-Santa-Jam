@@ -5,15 +5,14 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private GameObject slashAnimPrefab;
     [SerializeField] private Transform slashAnimSpawnPoint;
     [SerializeField] private Transform weaponCollider;
+    [SerializeField] private GameObject parent;
 
     private Animator myAnimator;
-    private PlayerMovement playerController;
 
     private GameObject slashAnim;
 
     private void Awake()
     {
-        playerController = GetComponentInParent<PlayerMovement>();
         myAnimator = GetComponent<Animator>();
     }
 
@@ -45,7 +44,7 @@ public class PlayerCombat : MonoBehaviour
     {
         slashAnim.gameObject.transform.rotation = Quaternion.Euler(-180, 0, 0);
 
-        if (playerController.FacingLeft)
+        if (parent.GetComponent<PlayerMovement>().FacingLeft == true)
         {
             slashAnim.GetComponent<SpriteRenderer>().flipX = true;
         }
@@ -55,7 +54,7 @@ public class PlayerCombat : MonoBehaviour
     {
         slashAnim.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
 
-        if (playerController.FacingLeft)
+        if (parent.GetComponent<PlayerMovement>().FacingLeft == true)
         {
             slashAnim.GetComponent<SpriteRenderer>().flipX = true;
         }
@@ -64,7 +63,7 @@ public class PlayerCombat : MonoBehaviour
     private void MouseFollowWithOffset()
     {
         Vector3 mousePos = Input.mousePosition;
-        Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(playerController.transform.position);
+        Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(parent.transform.position);
 
         float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
 

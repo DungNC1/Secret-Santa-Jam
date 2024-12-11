@@ -35,7 +35,7 @@ public class MarshmallowMinion : MonoBehaviour
             PlayerHealth playerHealth = collider.GetComponent<PlayerHealth>();
             if (playerHealth != null)
             {
-                playerHealth.TakeDamage((int)explosionDamage);
+                playerHealth.TakeDamage((int)explosionDamage, transform);
             }
         }
         Destroy(gameObject);
