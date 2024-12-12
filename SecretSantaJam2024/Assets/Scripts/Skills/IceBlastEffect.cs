@@ -31,7 +31,7 @@ public class IceBlastEffect : MonoBehaviour
         if (other.gameObject.CompareTag("Wall") && !other.isTrigger)
         {
             isGrowing = false;
-        } else if(other.gameObject.CompareTag("Enemy"))
+        } else if(other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Boss"))
         {
             other.gameObject.GetComponent<EnemyMovement>().Freeze(3);
         }

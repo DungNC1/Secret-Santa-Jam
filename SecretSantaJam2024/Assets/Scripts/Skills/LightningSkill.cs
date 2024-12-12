@@ -16,13 +16,13 @@ public class LightningStrikeSkill : Skill
             Debug.Log("Casting Lightning Strike!");
 
             // Find all enemies in the scene
-            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            EnemyHealth[] enemies = FindObjectsOfType<EnemyHealth>();
 
             // Shuffle the array to ensure randomness
             for (int i = enemies.Length - 1; i > 0; i--)
             {
                 int j = Random.Range(0, i + 1);
-                GameObject temp = enemies[i];
+                EnemyHealth temp = enemies[i];
                 enemies[i] = enemies[j];
                 enemies[j] = temp;
             }
@@ -32,7 +32,7 @@ public class LightningStrikeSkill : Skill
             for (int i = 0; i < enemiesToHit; i++)
             {
                 // Instantiate the lightning strike effect at the enemy's position after a short delay
-                CoroutineHelper.Instance.StartCoroutine(SpawnLightningStrike(enemies[i].transform.position, strikeDelay * i));
+                CoroutineHelper.Instance.StartCoroutine(SpawnLightningStrike(enemies[i].gameObject.transform.position, strikeDelay * i));
             }
         }
         else

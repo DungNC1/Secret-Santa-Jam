@@ -12,7 +12,7 @@ public class LightningStrikeEffect : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") || collision.CompareTag("Boss"))
         {
             EnemyHealth enemy = collision.GetComponent<EnemyHealth>();
             Knockback knockback = collision.GetComponent<Knockback>();

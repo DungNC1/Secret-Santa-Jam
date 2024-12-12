@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float lifeTime;
+    [SerializeField] private bool followPlayer = true;
     private float lifeTimeCounter;
 
     private Transform player;
@@ -21,7 +22,10 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        if(followPlayer)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        }
 
         lifeTimeCounter -= Time.deltaTime;
 

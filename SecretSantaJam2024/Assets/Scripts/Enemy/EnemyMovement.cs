@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float moveSpeed = 2f;
+    private float moveSpeed;
 
     [Header("Slash Effect")]
     [SerializeField] private GameObject slashAnimPrefab;
@@ -42,6 +42,8 @@ public class EnemyMovement : MonoBehaviour
 
     private void Awake()
     {
+        moveSpeed = Random.Range(2f, 4f);
+        Debug.Log(moveSpeed);
         animator = GetComponent<Animator>();
         knockback = GetComponent<Knockback>();
         player = GameObject.FindWithTag("Player").transform;
