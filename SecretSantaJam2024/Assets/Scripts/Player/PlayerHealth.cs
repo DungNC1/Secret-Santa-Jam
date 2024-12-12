@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 10;
-    private int currentHealth;
+    public int currentHealth { get; private set; }
 
     private Knockback knockback;
 

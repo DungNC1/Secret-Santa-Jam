@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerMana : MonoBehaviour
 {
     public int maxMana = 100;
-    private int currentMana;
+    public int currentMana { get; private set; }
 
     void Start()
     {
