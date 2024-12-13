@@ -115,7 +115,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 1, g: 0.8390293, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.6981132, b: 0.30362362, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -227,6 +227,7 @@ MonoBehaviour:
   - {fileID: 8949473686644394565, guid: f5a2bd4c96d23f7409d498020230f03d, type: 3}
   - {fileID: 786939197290239670, guid: d4ab37b63b64c1440b95adff838117d9, type: 3}
   - {fileID: 1273924361401648334, guid: bdb3126bad3d6a745950dbec5ee38287, type: 3}
+  isSleighCharging: 0
 --- !u!114 &3595061266003760053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,10 +254,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5f4132e6d7ca364891c83893e2f6ada, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  slashAnimPrefab: {fileID: 0}
+  slashAnimSpawnPoint: {fileID: 0}
   attackCooldown: 1.5
   range: 1.5
   damage: 1
+  swordAnimator: {fileID: 0}
   colliderDistance: 1
   boxCollider: {fileID: 5994321263897126409}
   playerLayer:

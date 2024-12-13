@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private PlayerMana playerMana;
     private Animator animator;
     private Vector2 moveInput;
-    private bool isDodging = false;
+    [HideInInspector] public bool isDodging = false;
     private float nextDodgeTime;
     private float originalMovespeed;
 

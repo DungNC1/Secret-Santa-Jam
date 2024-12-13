@@ -49,6 +49,7 @@ MonoBehaviour:
   slashAnimPrefab: {fileID: 8916435553864676213, guid: 9ca1845b42c5f25459e68d726f872960, type: 3}
   slashAnimSpawnPoint: {fileID: 0}
   weaponCollider: {fileID: 0}
+  parent: {fileID: 0}
 --- !u!212 &6572665195330518568
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -89,7 +90,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 601cd1bfcc9e36945bfe6939c69a756a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
