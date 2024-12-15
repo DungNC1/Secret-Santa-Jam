@@ -14,7 +14,6 @@ public class ShootingEnemy : MonoBehaviour
     private float timeBtwShots;
     public float startTimeBtwShots;
 
-    // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -22,7 +21,6 @@ public class ShootingEnemy : MonoBehaviour
         timeBtwShots = startTimeBtwShots;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Vector2.Distance(transform.position, player.position) > stoppingDistance)

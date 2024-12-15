@@ -1,18 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RoomTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject[] enemies; // Array to hold the room's enemies
+
     void Start()
     {
-        
+        // Disable all enemies at the start
+        SetEnemiesActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            // Enable enemies when the player enters the room
+            SetEnemiesActive(true);
+        }
+    }
+
+    void SetEnemiesActive(bool isActive)
+    {
+        foreach (GameObject enemy in enemies)
+        {
+            enemy.SetActive(isActive);
+        }
     }
 }

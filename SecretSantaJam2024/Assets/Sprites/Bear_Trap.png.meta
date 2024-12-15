@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4f58224ae23332e4f800acbb57023260
+guid: 7e322c782117377408a0da877340c3b6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,54 +110,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: health_bar_0
+      name: Bear_Trap_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 5
-        width: 61
-        height: 61
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 1}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6103842c9cb12a145b6177c3b8477ea9
-      internalID: 1095985357
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: health_bar_1
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 86
-        width: 381
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ad3bd4253bd1cef47972614074499a01
-      internalID: -310894667
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: health_bar_2
-      rect:
-        serializedVersion: 2
-        x: 46
-        y: 161
-        width: 374
+        x: 0
+        y: 0
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -166,8 +124,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58897b4564e258c4c945f5ce25b725eb
-      internalID: -855505079
+      spriteID: 516e6c02efd2efc4fbcd7b2504a0609c
+      internalID: 846864044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bear_Trap_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96cf4098316432647837e72c87e4a058
+      internalID: 1659843085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bear_Trap_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25f5ea7d2dca69d46b5ec914624e8597
+      internalID: 1063979632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bear_Trap_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 570d80cb8efcadd48836eb94c329d9db
+      internalID: 465488853
       vertices: []
       indices: 
       edges: []
@@ -183,9 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      health_bar_0: 1095985357
-      health_bar_1: -310894667
-      health_bar_2: -855505079
+      Bear_Trap_0: 846864044
+      Bear_Trap_1: 1659843085
+      Bear_Trap_2: 1063979632
+      Bear_Trap_3: 465488853
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
