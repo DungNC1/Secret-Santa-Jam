@@ -7,14 +7,13 @@ public class Fireball : MonoBehaviour
 
     public void Initialize(Vector3 direction, float speed)
     {
-        this.direction = direction;
+        this.direction = direction.normalized;
         this.speed = speed;
         Destroy(gameObject, 5f); // Destroy the fireball after 5 seconds to prevent it from existing indefinitely
     }
 
     void Update()
     {
-        // Move the fireball in the specified direction
         transform.position += direction * speed * Time.deltaTime;
     }
 

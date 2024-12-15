@@ -34,12 +34,6 @@ public class SkillManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2)) { SelectSkill(1); }
         if (Input.GetKeyDown(KeyCode.Alpha3)) { SelectSkill(2); }
         if (Input.GetKeyDown(KeyCode.Alpha4)) { SelectSkill(3); }
-        if (Input.GetKeyDown(KeyCode.Alpha5)) { SelectSkill(4); }
-        if (Input.GetKeyDown(KeyCode.Alpha6)) { SelectSkill(5); }
-        if (Input.GetKeyDown(KeyCode.Alpha7)) { SelectSkill(6); }
-        if (Input.GetKeyDown(KeyCode.Alpha8)) { SelectSkill(7); }
-        if (Input.GetKeyDown(KeyCode.Alpha9)) { SelectSkill(8); }
-        if (Input.GetKeyDown(KeyCode.Alpha0)) { SelectSkill(9); }
     }
 
     public void SelectSkill(int index)

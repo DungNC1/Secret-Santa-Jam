@@ -16,5 +16,4 @@ MonoBehaviour:
   manaCost: 15
   cooldown: 3
   fireballPrefab: {fileID: 6327972868945754586, guid: 33a8a2a37a5a1ab499f3fa46b35a15c3, type: 3}
-  spawnOffset: {x: 0.7, y: 0, z: 0}
   fireballSpeed: 10

@@ -16,11 +16,8 @@ public class Knockback : MonoBehaviour
 
     public void GetKnockedBack(Transform damageSource, float knockBackThrust)
     {
-        Debug.Log("Knockback triggered");
-
         gettingKnockedBack = true;
         Vector2 difference = (transform.position - damageSource.position).normalized * knockBackThrust * rb.mass;
-        Debug.Log("Knockback force: " + difference);
 
         rb.AddForce(difference, ForceMode2D.Impulse);
         StartCoroutine(KnockRoutine());
@@ -29,7 +26,6 @@ public class Knockback : MonoBehaviour
     private IEnumerator KnockRoutine()
     {
         yield return new WaitForSeconds(knockBackTime);
-        Debug.Log("Knockback end");
         rb.velocity = Vector2.zero;
         gettingKnockedBack = false;
     }
