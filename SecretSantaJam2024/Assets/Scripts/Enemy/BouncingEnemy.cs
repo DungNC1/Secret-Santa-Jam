@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class BouncingEnemy : MonoBehaviour
@@ -9,15 +8,19 @@ public class BouncingEnemy : MonoBehaviour
     [SerializeField] private Vector2 rightCheckSize, leftCheckSize, roofCheckSize, groundCheckSize;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private bool goingUp = true;
+    [SerializeField] private Sprite[] candySprites;
 
     private Knockback knockback;
     private bool touchedGround, touchedRoof, touchedRight, touchedLeft;
     private Rigidbody2D enemyRB;
+    private SpriteRenderer spriteRenderer;
 
     private void Start()
     {
         knockback = GetComponent<Knockback>();
         enemyRB = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = candySprites[Random.Range(0, candySprites.Length)];
     }
 
     private void Update()

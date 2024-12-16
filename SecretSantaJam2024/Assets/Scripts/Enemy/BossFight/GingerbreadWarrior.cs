@@ -5,15 +5,13 @@ public class GingerbreadWarrior : MonoBehaviour
     [SerializeField] private int candyCaneDamage = 2;
     [SerializeField] private GameObject marshmallowMinionPrefab;
     [SerializeField] private GameObject smallerGingerbreadWarriorPrefab;
+    [SerializeField] private GameObject bouncingCandyPrefab;
     [SerializeField] private float spawnRadius = 5f;
-    [SerializeField] private int maxMarshmallowMinions = 3;
-    [SerializeField] private int maxSmallerGingerbreadWarriors = 2;
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private float moveInterval = 3f;
-    private float minionSpawnCooldown;
-    private float gingerbreadMinioSpawnCooldown;
+    private float spawnCooldown;
+    private float spawnTimer;
 
-    private float minionSpawnTimer;
     private Transform player;
     private Vector3 targetPosition;
     private float moveTimer;
@@ -21,30 +19,22 @@ public class GingerbreadWarrior : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
-        minionSpawnCooldown = Random.Range(5, 10);
-        gingerbreadMinioSpawnCooldown = Random.Range(5, 10);
-        minionSpawnTimer = minionSpawnCooldown;
+        spawnCooldown = Random.Range(1, 5);
+        spawnTimer = spawnCooldown;
         moveTimer = moveInterval;
         SetRandomTargetPosition();
     }
 
     private void Update()
     {
-        minionSpawnTimer -= Time.deltaTime;
-        gingerbreadMinioSpawnCooldown -= Time.deltaTime;
+        spawnTimer -= Time.deltaTime;
         moveTimer -= Time.deltaTime;
 
-        if (minionSpawnTimer <= 0)
+        if (spawnTimer <= 0)
         {
-            SpawnMarshmallowMinions();
-            minionSpawnCooldown = Random.Range(5, 10);
-            minionSpawnTimer = minionSpawnCooldown;
-        }
-
-        if (gingerbreadMinioSpawnCooldown <= 0)
-        {
-            SpawnSmallerGingerbreadWarriors();
-            gingerbreadMinioSpawnCooldown = Random.Range(5, 10);
+            SpawnRandomEnemy();
+            spawnCooldown = Random.Range(1, 5);
+            spawnTimer = spawnCooldown;
         }
 
         if (moveTimer <= 0)
@@ -69,21 +59,22 @@ public class GingerbreadWarrior : MonoBehaviour
         player.GetComponent<PlayerHealth>().TakeDamage(candyCaneDamage, transform);
     }
 
-    private void SpawnMarshmallowMinions()
+    private void SpawnRandomEnemy()
     {
-        for (int i = 0; i < maxMarshmallowMinions; i++)
-        {
-            Vector3 spawnPosition = GenerateRandomPosition();
-            Instantiate(marshmallowMinionPrefab, spawnPosition, Quaternion.identity);
-        }
-    }
+        int randomEnemy = Random.Range(0, 3);
+        Vector3 spawnPosition = GenerateRandomPosition();
 
-    private void SpawnSmallerGingerbreadWarriors()
-    {
-        for (int i = 0; i < maxSmallerGingerbreadWarriors; i++)
+        switch (randomEnemy)
         {
-            Vector3 spawnPosition = GenerateRandomPosition();
-            Instantiate(smallerGingerbreadWarriorPrefab, spawnPosition, Quaternion.identity);
+            case 0:
+                Instantiate(marshmallowMinionPrefab, spawnPosition, Quaternion.identity);
+                break;
+            case 1:
+                Instantiate(smallerGingerbreadWarriorPrefab, spawnPosition, Quaternion.identity);
+                break;
+            case 2:
+                Instantiate(bouncingCandyPrefab, spawnPosition, Quaternion.identity);
+                break;
         }
     }
 

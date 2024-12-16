@@ -104,16 +104,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   candyCaneDamage: 2
   marshmallowMinionPrefab: {fileID: 6665338079419921538, guid: 058f467139c437c43848df325ddbc78c, type: 3}
-  smallerGingerbreadWarriorPrefab: {fileID: 1781041508894157605, guid: bcf7f79f498005d41a9b96bf787f3a78, type: 3}
+  smallerGingerbreadWarriorPrefab: {fileID: 8912809874329287224, guid: 56e0c2c7366a377408dd6259e3dd24a7, type: 3}
   spawnRadius: 3
   maxMarshmallowMinions: 10
   maxSmallerGingerbreadWarriors: 5
-  movementAreaCenter: {x: 0, y: 0.2}
-  movementAreaSize: {x: 25, y: -3.5}
   moveSpeed: 2
   moveInterval: 3
-  mapBoundsMin: {x: 12, y: 4}
-  mapBoundsMax: {x: -12, y: -3.5}
 --- !u!50 &8625621853244578901
 Rigidbody2D:
   serializedVersion: 4
@@ -156,6 +152,7 @@ MonoBehaviour:
   startingHealth: 50
   loot:
   - {fileID: 429655628128380509, guid: a355906caa330fb4cbd2f5a6867743c4, type: 3}
+  isSleighCharging: 0
 --- !u!70 &8498851989864942020
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
