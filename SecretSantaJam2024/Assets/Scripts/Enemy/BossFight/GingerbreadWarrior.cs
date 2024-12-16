@@ -8,15 +8,10 @@ public class GingerbreadWarrior : MonoBehaviour
     [SerializeField] private float spawnRadius = 5f;
     [SerializeField] private int maxMarshmallowMinions = 3;
     [SerializeField] private int maxSmallerGingerbreadWarriors = 2;
-    [SerializeField] private Vector2 movementAreaCenter;
-    [SerializeField] private Vector2 movementAreaSize;
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private float moveInterval = 3f;
-    [SerializeField] private Vector2 mapBoundsMin;
-    [SerializeField] private Vector2 mapBoundsMax;
     private float minionSpawnCooldown;
     private float gingerbreadMinioSpawnCooldown;
-    private float slamCooldown;
 
     private float minionSpawnTimer;
     private Transform player;
@@ -26,9 +21,8 @@ public class GingerbreadWarrior : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
-        minionSpawnCooldown = Random.Range(5, 15);
-        gingerbreadMinioSpawnCooldown = Random.Range(5, 15);
-        slamCooldown = Random.Range(10, 15);
+        minionSpawnCooldown = Random.Range(5, 10);
+        gingerbreadMinioSpawnCooldown = Random.Range(5, 10);
         minionSpawnTimer = minionSpawnCooldown;
         moveTimer = moveInterval;
         SetRandomTargetPosition();
@@ -43,26 +37,20 @@ public class GingerbreadWarrior : MonoBehaviour
         if (minionSpawnTimer <= 0)
         {
             SpawnMarshmallowMinions();
-            minionSpawnCooldown = Random.Range(5, 15);
+            minionSpawnCooldown = Random.Range(5, 10);
             minionSpawnTimer = minionSpawnCooldown;
         }
 
-        if(gingerbreadMinioSpawnCooldown <= 0)
+        if (gingerbreadMinioSpawnCooldown <= 0)
         {
             SpawnSmallerGingerbreadWarriors();
-            gingerbreadMinioSpawnCooldown = Random.Range(5, 15);
+            gingerbreadMinioSpawnCooldown = Random.Range(5, 10);
         }
 
         if (moveTimer <= 0)
         {
             SetRandomTargetPosition();
             moveTimer = moveInterval;
-        }
-
-        if(slamCooldown <= 0)
-        {
-            player.GetComponent<Knockback>().GetKnockedBack(transform, 15);
-            slamCooldown = Random.Range(10, 15);
         }
 
         MoveTowardsTargetPosition();
@@ -104,15 +92,10 @@ public class GingerbreadWarrior : MonoBehaviour
         Vector3 randomDirection = Random.insideUnitCircle.normalized * spawnRadius;
         Vector3 randomPosition = transform.position + randomDirection;
 
-        randomPosition.x = Mathf.Clamp(randomPosition.x, mapBoundsMin.x, mapBoundsMax.x);
-        randomPosition.y = Mathf.Clamp(randomPosition.y, mapBoundsMin.y, mapBoundsMax.y);
-
         while (Vector3.Distance(randomPosition, player.position) < 1f)
         {
             randomDirection = Random.insideUnitCircle.normalized * spawnRadius;
             randomPosition = transform.position + randomDirection;
-            randomPosition.x = Mathf.Clamp(randomPosition.x, mapBoundsMin.x, mapBoundsMax.x);
-            randomPosition.y = Mathf.Clamp(randomPosition.y, mapBoundsMin.y, mapBoundsMax.y);
         }
 
         return randomPosition;
@@ -120,24 +103,13 @@ public class GingerbreadWarrior : MonoBehaviour
 
     private void SetRandomTargetPosition()
     {
-        float randomX = Random.Range(-movementAreaSize.x / 2, movementAreaSize.x / 2);
-        float randomY = Random.Range(-movementAreaSize.y / 2, movementAreaSize.y / 2);
-        targetPosition = movementAreaCenter + new Vector2(randomX, randomY);
+        float randomX = Random.Range(-moveInterval, moveInterval);
+        float randomY = Random.Range(-moveInterval, moveInterval);
+        targetPosition = new Vector2(transform.position.x + randomX, transform.position.y + randomY);
     }
 
     private void MoveTowardsTargetPosition()
     {
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(movementAreaCenter, movementAreaSize);
-        Gizmos.color = Color.blue;
-        Gizmos.DrawLine(new Vector2(mapBoundsMin.x, mapBoundsMin.y), new Vector2(mapBoundsMin.x, mapBoundsMax.y));
-        Gizmos.DrawLine(new Vector2(mapBoundsMin.x, mapBoundsMin.y), new Vector2(mapBoundsMax.x, mapBoundsMin.y));
-        Gizmos.DrawLine(new Vector2(mapBoundsMax.x, mapBoundsMin.y), new Vector2(mapBoundsMax.x, mapBoundsMax.y));
-        Gizmos.DrawLine(new Vector2(mapBoundsMin.x, mapBoundsMax.y), new Vector2(mapBoundsMax.x, mapBoundsMax.y));
     }
 }

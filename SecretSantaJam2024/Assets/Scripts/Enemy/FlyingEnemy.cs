@@ -3,23 +3,32 @@ using UnityEngine;
 public class FlyingEnemy : MonoBehaviour
 {
     public float speed = 3f;
-
-    private Vector3 initialPosition;
+    public float changeDirectionTime = 3f;
+    private Vector3 randomDirection;
+    private float timer;
 
     void Start()
     {
-        initialPosition = transform.position;
+        SetRandomDirection();
     }
 
     void Update()
     {
-        Patrol();
+        timer += Time.deltaTime;
+
+        if (timer >= changeDirectionTime)
+        {
+            SetRandomDirection();
+            timer = 0;
+        }
+
+        transform.Translate(randomDirection * speed * Time.deltaTime);
     }
 
-    void Patrol()
+    void SetRandomDirection()
     {
-        // Simple back and forth patrol behavior
-        transform.position = initialPosition + new Vector3(Mathf.PingPong(Time.time * speed, 4) - 2, Mathf.Sin(Time.time * speed) * 2, 0);
+        float randomAngle = Random.Range(0f, 360f);
+        randomDirection = new Vector3(Mathf.Cos(randomAngle), Mathf.Sin(randomAngle), 0).normalized;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
