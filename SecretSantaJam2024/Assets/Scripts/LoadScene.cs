@@ -14,6 +14,9 @@ public class LoadScene : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Load();
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            Load();
+        }
     }
 }
