@@ -6755,6 +6755,9 @@ MonoBehaviour:
   startingDistance: 0.1
   burstInterval: 0.5
   player: {fileID: 287695939}
+  elfPrefab: {fileID: 939060444}
+  numberOfElves: 3
+  spawnRadius: 2
 --- !u!212 &587995931
 SpriteRenderer:
   m_ObjectHideFlags: 0

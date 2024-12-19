@@ -3,20 +3,29 @@ using System.Collections;
 
 public class CorruptedSanta : MonoBehaviour
 {
+    [Header("Teleport")]
     [SerializeField] private float teleportRangeX = 10f;
     [SerializeField] private float teleportRangeY = 10f;
     [SerializeField] private Vector3 teleportOrigin;
+
+    [Header("Candy")]
     [SerializeField] private GameObject candyPrefab;
     [SerializeField] private float throwForce = 10f;
     [SerializeField] private int candiesPerBurst = 5;
-    private float angleSpread;
     [SerializeField] private int totalBursts = 5;
     [SerializeField] private float startingDistance = 0.1f;
     [SerializeField] private float burstInterval = 0.5f;
     [SerializeField] private Transform player; // Assign the player transform in the inspector
+    private float angleSpread;
+    private bool isShooting = false;
+
+    [Header("Elf")]
+    [SerializeField] private GameObject elfPrefab;
+    [SerializeField] private int numberOfElves = 3;
+    [SerializeField] private float spawnRadius = 2f;
+
     private float skillCooldown;
     private float skillTimer;
-    private bool isShooting = false;
 
     private void Start()
     {
@@ -45,7 +54,7 @@ public class CorruptedSanta : MonoBehaviour
 
     private void UseRandomSkill()
     {
-        int randomSkill = Random.Range(7, 7);  // Number of skills
+        int randomSkill = Random.Range(0, 7);  // Number of skills
 
         switch (randomSkill)
         {
@@ -103,8 +112,14 @@ public class CorruptedSanta : MonoBehaviour
     private void SummonShadowElves()
     {
         Debug.Log("Summoning Shadow Elves!");
-        // Logic for summoning shadow elves
+
+        for (int i = 0; i < numberOfElves; i++)
+        {
+            Vector2 spawnPosition = (Vector2)transform.position + Random.insideUnitCircle * spawnRadius;
+            Instantiate(elfPrefab, spawnPosition, Quaternion.identity);
+        }
     }
+
 
     private void DropDarkGifts()
     {
