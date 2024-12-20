@@ -6758,6 +6758,8 @@ MonoBehaviour:
   elfPrefab: {fileID: 939060444}
   numberOfElves: 3
   spawnRadius: 2
+  soulShieldPrefab: {fileID: 1254980983}
+  numberOfSouls: 3
 --- !u!212 &587995931
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26713,6 +26715,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67fd4307a5cdf104e80206c41bb75b40, type: 3}
+--- !u!1 &1254980983 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8878681907177929252, guid: a74465db8af50164391537c71ec18995, type: 3}
+  m_PrefabInstance: {fileID: 5543797413948702045}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1264382181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28478,6 +28485,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6296321279842010030, guid: 1ef335c1d49a4cd4eb52db5ac134d62e, type: 3}
   m_PrefabInstance: {fileID: 1293310970}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5543797413948702045
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1111095131012427079, guid: a74465db8af50164391537c71ec18995, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -18.344254
+      objectReference: {fileID: 0}
+    - target: {fileID: 1111095131012427079, guid: a74465db8af50164391537c71ec18995, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.5259056
+      objectReference: {fileID: 0}
+    - target: {fileID: 1111095131012427079, guid: a74465db8af50164391537c71ec18995, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.1485084
+      objectReference: {fileID: 0}
+    - target: {fileID: 1111095131012427079, guid: a74465db8af50164391537c71ec18995, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1111095131012427079, guid: a74465db8af50164391537c71ec18995, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1111095131012427079, guid: a74465db8af50164391537c71ec18995, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1111095131012427079, guid: a74465db8af50164391537c71ec18995, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1111095131012427079, guid: a74465db8af50164391537c71ec18995, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1111095131012427079, guid: a74465db8af50164391537c71ec18995, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1111095131012427079, guid: a74465db8af50164391537c71ec18995, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878681907177929252, guid: a74465db8af50164391537c71ec18995, type: 3}
+      propertyPath: m_Name
+      value: CoalShield
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a74465db8af50164391537c71ec18995, type: 3}
 --- !u!1001 &8815670507735847197
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28562,3 +28626,4 @@ SceneRoots:
   - {fileID: 727796137}
   - {fileID: 244606277}
   - {fileID: 587995932}
+  - {fileID: 5543797413948702045}

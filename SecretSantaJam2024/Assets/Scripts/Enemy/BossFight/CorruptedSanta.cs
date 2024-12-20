@@ -24,6 +24,10 @@ public class CorruptedSanta : MonoBehaviour
     [SerializeField] private int numberOfElves = 3;
     [SerializeField] private float spawnRadius = 2f;
 
+    [Header("Coal")]
+    [SerializeField] private GameObject soulShieldPrefab;
+    [SerializeField] private int numberOfSouls = 3;
+
     private float skillCooldown;
     private float skillTimer;
 
@@ -59,7 +63,7 @@ public class CorruptedSanta : MonoBehaviour
         switch (randomSkill)
         {
             case 0:
-                PerformCoalBombAttack();
+                SummonSoulShield();
                 break;
             case 1:
                 PerformCandyCaneStrike();
@@ -85,11 +89,20 @@ public class CorruptedSanta : MonoBehaviour
         }
     }
 
-    private void PerformCoalBombAttack()
+    private void SummonSoulShield()
     {
-        Debug.Log("Performing Coal Bomb Attack!");
-        // Logic for throwing coal bombs
+        Debug.Log("Summoning Coal Shield!");
+
+        for (int i = 0; i < numberOfSouls; i++)
+        {
+            GameObject coal = Instantiate(soulShieldPrefab, transform.position, Quaternion.identity);
+            CoalShield coalShield = coal.GetComponent<CoalShield>();
+            float angle = i * Mathf.PI * 2f / numberOfSouls;
+            coalShield.Initialize(transform, angle); // Initialize with the angle based on spacing
+        }
     }
+
+
 
     private void PerformCandyCaneStrike()
     {
@@ -116,7 +129,8 @@ public class CorruptedSanta : MonoBehaviour
         for (int i = 0; i < numberOfElves; i++)
         {
             Vector2 spawnPosition = (Vector2)transform.position + Random.insideUnitCircle * spawnRadius;
-            Instantiate(elfPrefab, spawnPosition, Quaternion.identity);
+            GameObject elf = Instantiate(elfPrefab, spawnPosition, Quaternion.identity);
+            elf.SetActive(true);
         }
     }
 
