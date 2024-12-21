@@ -9,21 +9,36 @@ public class FrostNova : MonoBehaviour
     [SerializeField] private ParticleSystem frostNovaEffect;
     [SerializeField] private CircleCollider2D frostNovaCollider;
     [SerializeField] private float frostNovaDuration = 3f; // Duration of the FrostNova effect
+    private static bool isActive = false; // Static flag to track if FrostNova is active
 
     private void Start()
     {
-        frostNovaCollider.enabled = true;
+        if (isActive)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        isActive = true;
         frostNovaCollider.radius = 0.1f;
 
         if (frostNovaEffect != null)
         {
-            var effect = Instantiate(frostNovaEffect, transform.position, Quaternion.identity);
-            Destroy(effect.gameObject, frostNovaEffect.main.duration);
+            for(int i = 0; i < 3; i++)
+            {
+                var effect = Instantiate(frostNovaEffect, transform.position, Quaternion.identity);
+                Destroy(effect.gameObject, frostNovaEffect.main.duration);
+            }
         }
 
         StartCoroutine(ExpandCollider());
         StartCoroutine(ApplyEffectsContinuously());
-        Destroy(gameObject, frostNovaDuration);
+        StartCoroutine(DeactivateAfterDuration());
+    }
+
+    private void OnDestroy()
+    {
+        isActive = false;
     }
 
     private IEnumerator ExpandCollider()
@@ -46,7 +61,7 @@ public class FrostNova : MonoBehaviour
         while (true)
         {
             ApplyEffects();
-            yield return new WaitForSeconds(0.1f); // Adjust the frequency as needed
+            yield return new WaitForSeconds(0.5f); // Adjust the frequency as needed
         }
     }
 
@@ -77,5 +92,12 @@ public class FrostNova : MonoBehaviour
         playerMovement.moveSpeed *= slowAmount;
         yield return new WaitForSeconds(slowDuration);
         playerMovement.moveSpeed /= slowAmount;
+    }
+
+    private IEnumerator DeactivateAfterDuration()
+    {
+        yield return new WaitForSeconds(frostNovaDuration);
+        isActive = false;
+        Destroy(gameObject);
     }
 }

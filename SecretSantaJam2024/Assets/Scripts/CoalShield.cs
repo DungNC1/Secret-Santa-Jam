@@ -3,7 +3,7 @@ using UnityEngine;
 public class CoalShield : MonoBehaviour
 {
     public float orbitRadius = 2f;
-    public float orbitSpeed = 5f;
+    public float orbitSpeed = 2.5f;
     public float spacingAngle; // This will be set dynamically
     private Transform centerPoint;
     private float currentAngle;

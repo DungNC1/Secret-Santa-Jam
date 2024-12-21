@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orbitRadius: 3
-  orbitSpeed: 4
+  orbitSpeed: 2.5
   spacingAngle: 0
 --- !u!58 &6930507473264635267
 CircleCollider2D:

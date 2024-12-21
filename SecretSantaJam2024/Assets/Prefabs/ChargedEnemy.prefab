@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3979422949861826189}
   - component: {fileID: 2832759035078311098}
   - component: {fileID: 999442184757749023}
+  - component: {fileID: 3596179950563937489}
   m_Layer: 7
   m_Name: ChargedEnemy
   m_TagString: Enemy
@@ -33,7 +34,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,8 +80,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.98490566, g: 0.89264214, b: 0.5705019, a: 1}
+  m_Sprite: {fileID: -1830628341, guid: 5674ed5c965b0ee41a7c9bc4e764ba57, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -153,7 +154,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.28125, y: 1.46875}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -192,6 +193,7 @@ MonoBehaviour:
   - {fileID: 8949473686644394565, guid: f5a2bd4c96d23f7409d498020230f03d, type: 3}
   - {fileID: 786939197290239670, guid: d4ab37b63b64c1440b95adff838117d9, type: 3}
   - {fileID: 1273924361401648334, guid: bdb3126bad3d6a745950dbec5ee38287, type: 3}
+  isSleighCharging: 0
 --- !u!114 &2832759035078311098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,3 +224,24 @@ MonoBehaviour:
   chargeSpeed: 10
   chargeDistance: 5
   chargeCooldown: 3
+--- !u!95 &3596179950563937489
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030822559107618729}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b3b3c4514ed74f84098650bfea2900cb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

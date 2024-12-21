@@ -13,11 +13,15 @@ public class ChargingEnemy : MonoBehaviour
     private Vector2 movement;
     private bool isCharging = false;
     private float chargeTimer = 0f;
+    private SpriteRenderer spriteRenderer;
+    private Knockback knockback;
 
     private void Awake()
     {
         player = GameObject.FindWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        knockback = GetComponent<Knockback>();
     }
 
     void Update()
@@ -32,6 +36,16 @@ public class ChargingEnemy : MonoBehaviour
             Vector3 direction = player.position - transform.position;
             direction.Normalize();
             movement = direction;
+
+            // Face left or right
+            if (direction.x > 0)
+            {
+                spriteRenderer.flipX = false;
+            }
+            else if (direction.x < 0)
+            {
+                spriteRenderer.flipX = true;
+            }
 
             // Check if within charge distance
             if (Vector3.Distance(transform.position, player.position) <= chargeDistance && chargeTimer <= 0f)
@@ -49,11 +63,11 @@ public class ChargingEnemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isCharging)
+        if (isCharging && knockback.gettingKnockedBack == false)
         {
             rb.MovePosition(rb.position + movement * chargeSpeed * Time.fixedDeltaTime);
         }
-        else if (player != null)
+        else if (player != null && knockback.gettingKnockedBack == false)
         {
             rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
         }
@@ -74,7 +88,7 @@ public class ChargingEnemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(1, transform);
         }

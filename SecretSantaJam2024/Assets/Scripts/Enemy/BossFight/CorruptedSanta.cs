@@ -62,7 +62,7 @@ public class CorruptedSanta : MonoBehaviour
 
     private void UseRandomSkill()
     {
-        int randomSkill = Random.Range(0, 7);  // Number of skills
+        int randomSkill = Random.Range(0, 8);  // Number of skills
 
         switch (randomSkill)
         {
@@ -106,8 +106,6 @@ public class CorruptedSanta : MonoBehaviour
         }
     }
 
-
-
     private void PerformCandyCaneStrike()
     {
         Debug.Log("Performing Candy Cane Strike!");
@@ -134,6 +132,7 @@ public class CorruptedSanta : MonoBehaviour
     private IEnumerator ResetFrostNova()
     {
         yield return new WaitForSeconds(3f);
+        Destroy(GameObject.FindWithTag("FrostNova"));
         canSpawnFrostNova = true;
     }
 
@@ -149,7 +148,6 @@ public class CorruptedSanta : MonoBehaviour
             elf.SetActive(true);
         }
     }
-
 
     private void DropDarkGifts()
     {
