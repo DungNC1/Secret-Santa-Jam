@@ -15,6 +15,7 @@ MonoBehaviour:
   skillName: IceBlast
   manaCost: 5
   cooldown: 5
+  icon: {fileID: -33475700, guid: 9096e9110ee20ef489dc6ff2872a1bfe, type: 3}
   iceBlastEffectPrefab: {fileID: 510307955731157480, guid: 8c9f087ad0f423041b050e40599ec1b1, type: 3}
   freezeDuration: 3
   laserRange: 10

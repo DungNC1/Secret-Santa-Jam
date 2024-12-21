@@ -5,6 +5,7 @@ public abstract class Skill : ScriptableObject
     public string skillName;
     public int manaCost;
     public float cooldown;
+    public Sprite icon;
 
     protected PlayerMana playerMana;
 

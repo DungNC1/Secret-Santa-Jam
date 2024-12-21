@@ -15,5 +15,6 @@ MonoBehaviour:
   skillName: Fireball
   manaCost: 15
   cooldown: 3
+  icon: {fileID: -2084988075, guid: 9096e9110ee20ef489dc6ff2872a1bfe, type: 3}
   fireballPrefab: {fileID: 6327972868945754586, guid: 33a8a2a37a5a1ab499f3fa46b35a15c3, type: 3}
   fireballSpeed: 10
