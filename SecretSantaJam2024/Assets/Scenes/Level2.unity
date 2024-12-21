@@ -6832,6 +6832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: a34a0c9ec0f64e04e8e13c9a85c196c7, type: 2}
   icon: {fileID: 614397908}
+  background: {fileID: 254449764}
 --- !u!4 &623637857 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 981439975256517489, guid: cf1a73766a8bd5f4e834a9ea96ce9802, type: 3}
@@ -6927,6 +6928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: 8fe0558de3ddba641b089c7ee576777a, type: 2}
   icon: {fileID: 632580429}
+  background: {fileID: 1495299423}
 --- !u!1 &641212113
 GameObject:
   m_ObjectHideFlags: 0
@@ -33013,6 +33015,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skill: {fileID: 11400000, guid: a06dd9288dc78ce4f8f399d669c40e3a, type: 2}
   icon: {fileID: 1532285683}
+  background: {fileID: 1107123273}
 --- !u!1001 &1538423193
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34284,6 +34287,10 @@ PrefabInstance:
       propertyPath: elfPrefab
       value: 
       objectReference: {fileID: 939060444}
+    - target: {fileID: 8151668238555077625, guid: 3aacd6a5c3438954f85f4a5f7454c5b4, type: 3}
+      propertyPath: candyCaneBouncePrefab
+      value: 
+      objectReference: {fileID: 9068360080694418565, guid: a89490c6af021ed40a5ada493845fa95, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -32,6 +32,10 @@ public class CorruptedSanta : MonoBehaviour
     [SerializeField] private GameObject frostNovaPrefab;
     private bool canSpawnFrostNova = true;
 
+    [Header("Candy Cane")]
+    [SerializeField] private GameObject candyCaneBouncePrefab;
+    [SerializeField] private int spawnAmount = 5;
+
     private float skillCooldown;
     private float skillTimer;
 
@@ -109,7 +113,11 @@ public class CorruptedSanta : MonoBehaviour
     private void PerformCandyCaneStrike()
     {
         Debug.Log("Performing Candy Cane Strike!");
-        // Logic for candy cane melee attack
+
+        for(int i = 0; i < spawnAmount; i++)
+        {
+            Instantiate(candyCaneBouncePrefab, transform.position, Quaternion.identity);
+        }
     }
 
     private void PerformBlizzardSummon()

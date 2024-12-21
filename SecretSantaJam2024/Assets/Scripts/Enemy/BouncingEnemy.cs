@@ -14,6 +14,7 @@ public class BouncingEnemy : MonoBehaviour
     private bool touchedGround, touchedRoof, touchedRight, touchedLeft;
     private Rigidbody2D enemyRB;
     private SpriteRenderer spriteRenderer;
+    private float rotationSpeed = 360f; // Rotation speed in degrees per second
 
     private void Start()
     {
@@ -21,20 +22,22 @@ public class BouncingEnemy : MonoBehaviour
         enemyRB = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = candySprites[Random.Range(0, candySprites.Length)];
+        moveDirection.x = Random.Range(-1f, 1f);
+        moveDirection.y = Random.Range(-1f, 1f);
     }
 
     private void Update()
     {
         HitLogic();
+        //RotateCandyCane();
     }
 
     private void FixedUpdate()
     {
-        if(knockback.gettingKnockedBack)
+        if (knockback.gettingKnockedBack)
         {
             return;
         }
-
         enemyRB.velocity = moveDirection * moveSpeed;
     }
 
@@ -75,6 +78,11 @@ public class BouncingEnemy : MonoBehaviour
         moveDirection.x = -moveDirection.x;
     }
 
+    /*private void RotateCandyCane()
+    {
+        transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
+    }*/
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
@@ -86,7 +94,7 @@ public class BouncingEnemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(1, transform);
         }

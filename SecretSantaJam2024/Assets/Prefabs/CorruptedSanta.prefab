@@ -118,6 +118,8 @@ MonoBehaviour:
   soulShieldPrefab: {fileID: 8878681907177929252, guid: a74465db8af50164391537c71ec18995, type: 3}
   numberOfSouls: 3
   frostNovaPrefab: {fileID: 1413014006678464501, guid: 93d04e2623da6c241b2e8647bb953f6b, type: 3}
+  candyCaneBouncePrefab: {fileID: 9068360080694418565, guid: a89490c6af021ed40a5ada493845fa95, type: 3}
+  spawnAmount: 5
 --- !u!61 &27717243449988181
 BoxCollider2D:
   m_ObjectHideFlags: 0
