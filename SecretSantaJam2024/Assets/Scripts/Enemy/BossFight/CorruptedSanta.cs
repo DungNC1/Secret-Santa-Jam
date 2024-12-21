@@ -28,6 +28,10 @@ public class CorruptedSanta : MonoBehaviour
     [SerializeField] private GameObject soulShieldPrefab;
     [SerializeField] private int numberOfSouls = 3;
 
+    [Header("Frost Nova")]
+    [SerializeField] private GameObject frostNovaPrefab;
+    private bool canSpawnFrostNova = true;
+
     private float skillCooldown;
     private float skillTimer;
 
@@ -118,9 +122,21 @@ public class CorruptedSanta : MonoBehaviour
 
     private void PerformFrostNova()
     {
-        Debug.Log("Performing Frost Nova!");
-        // Logic for Frost Nova attack
+        if(canSpawnFrostNova == true)
+        {
+            canSpawnFrostNova = false;
+            Debug.Log("Performing FrostNova!");
+            Instantiate(frostNovaPrefab, transform.position, Quaternion.identity);
+            StartCoroutine(ResetFrostNova());
+        }
     }
+
+    private IEnumerator ResetFrostNova()
+    {
+        yield return new WaitForSeconds(3f);
+        canSpawnFrostNova = true;
+    }
+
 
     private void SummonShadowElves()
     {
