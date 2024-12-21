@@ -25,7 +25,6 @@ public class EnemyMovement : MonoBehaviour
     private float cooldownTimer = Mathf.Infinity;
 
     private Transform player;
-    private Animator animator;
     private Rigidbody2D rb;
     private Vector2 movement;
     private Knockback knockback;
@@ -44,7 +43,6 @@ public class EnemyMovement : MonoBehaviour
     {
         moveSpeed = Random.Range(2f, 4f);
         Debug.Log(moveSpeed);
-        animator = GetComponent<Animator>();
         knockback = GetComponent<Knockback>();
         player = GameObject.FindWithTag("Player").transform;
         InvokeRepeating("ResetAttack", 1, 1);
@@ -84,17 +82,20 @@ public class EnemyMovement : MonoBehaviour
             movement = direction;
         }
 
-        if(movement.x > 0.01)
+        if (movement.x > 0.01f)
         {
-            Vector2 localScale = transform.localScale;
-            localScale.x = 1f;
-            transform.localScale = localScale;
-        } else if(movement.x < 0)
-        {
-            Vector2 localScale = transform.localScale;
-            localScale.x = -1f;
+            Vector3 localScale = transform.localScale;
+            localScale.x = Mathf.Abs(localScale.x);
+            localScale.x = Mathf.Abs(localScale.x);
             transform.localScale = localScale;
         }
+        else if (movement.x < -0.01f)
+        {
+            Vector3 localScale = transform.localScale;
+            localScale.x = -Mathf.Abs(localScale.x);
+            transform.localScale = localScale;
+        }
+
 
         isFacingLeft = movement.x < 0;
 
@@ -104,9 +105,9 @@ public class EnemyMovement : MonoBehaviour
 
             if (cooldownTimer >= attackCooldown)
             {
-                swordAnimator.SetTrigger("Attack");
-                playerHealth.TakeDamage(damage);
                 cooldownTimer = 0;
+                swordAnimator.SetTrigger("Attack");
+                playerHealth.TakeDamage(damage, transform);
                 slashAnim = Instantiate(slashAnimPrefab, slashAnimSpawnPoint.position, Quaternion.identity);
                 slashAnim.GetComponent<SpriteRenderer>().flipX = isFacingLeft;
                 slashAnim.transform.parent = this.transform.parent;
@@ -120,10 +121,6 @@ public class EnemyMovement : MonoBehaviour
         if (!isFrozen && player != null && !knockback.gettingKnockedBack && !isAttacking)
         {
             rb.MovePosition((Vector2)transform.position + (movement * moveSpeed * Time.fixedDeltaTime));
-            animator.SetFloat("IsMoving", 1);
-        } else
-        {
-            animator.SetFloat("IsMoving", -1);
         }
     }
 

@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 7475229275645849237}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.67, y: 0.06, z: 0}
+  m_LocalPosition: {x: 0.67, y: -0.27333334, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 6671340713930378732}
   - component: {fileID: -3137636469979303615}
   - component: {fileID: 1260668189607173601}
+  - component: {fileID: 7395432465080288090}
   m_Layer: 7
   m_Name: HybridMinion
   m_TagString: Enemy
@@ -64,7 +65,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.04, y: 0.12, z: -0.027854722}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 201068290290038237}
@@ -112,8 +113,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 1, g: 0.6924528, b: 0.6924528, a: 1}
+  m_Sprite: {fileID: 1580352305, guid: 1e6d09b4a35c1764eb9d9de2435be215, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -183,7 +184,7 @@ MonoBehaviour:
   range: 1
   damage: 1
   swordAnimator: {fileID: 7537927659803254814}
-  colliderDistance: 1.2
+  colliderDistance: 0.9
   boxCollider: {fileID: 1260668189607173601}
   playerLayer:
     serializedVersion: 2
@@ -247,19 +248,40 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0784578, y: -0.3994196}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.7589459, y: 1.2011608}
   m_EdgeRadius: 0
+--- !u!95 &7395432465080288090
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8912809874329287224}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ac817a8c96428fc4dadd2a05399be5d2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &26297828599421744
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -286,7 +308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8899576003582500909, guid: 0bc36ba41bb58da49a8418c2fd879db2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.12
+      value: 0.45333332
       objectReference: {fileID: 0}
     - target: {fileID: 8899576003582500909, guid: 0bc36ba41bb58da49a8418c2fd879db2, type: 3}
       propertyPath: m_LocalPosition.z
