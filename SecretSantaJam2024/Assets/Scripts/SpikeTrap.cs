@@ -14,8 +14,8 @@ public class SpikeTrap : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            animator.SetTrigger("Trigger");
-            other.GetComponent<PlayerHealth>().TakeDamage(damage);
+            //animator.SetTrigger("Trigger");
+            other.GetComponent<PlayerHealth>().TakeDamage(damage, transform);
         }
     }
 

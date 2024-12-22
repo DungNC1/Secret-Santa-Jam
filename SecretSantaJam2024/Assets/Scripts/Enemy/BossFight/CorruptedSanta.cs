@@ -40,6 +40,12 @@ public class CorruptedSanta : MonoBehaviour
     [Header("Present")]
     [SerializeField] private GameObject presentPrefab;
 
+    [Header("Trap")]
+    [SerializeField] private GameObject cocoaTrapPrefab;
+    [SerializeField] private Transform throwPoint;
+    [SerializeField] private float trapThrowForce = 10f;
+    [SerializeField] private int trapAmount;
+
     private float skillCooldown;
     private float skillTimer;
 
@@ -54,6 +60,7 @@ public class CorruptedSanta : MonoBehaviour
     private void Update()
     {
         skillTimer -= Time.deltaTime;
+        FacePlayer();
 
         if (skillTimer <= 0)
         {
@@ -81,7 +88,7 @@ public class CorruptedSanta : MonoBehaviour
                 PerformCandyCaneStrike();
                 break;
             case 2:
-                PerformBlizzardSummon();
+                ThrowCocoaTrap();
                 break;
             case 3:
                 PerformFrostNova();
@@ -124,10 +131,25 @@ public class CorruptedSanta : MonoBehaviour
         }
     }
 
-    private void PerformBlizzardSummon()
+    private void ThrowCocoaTrap()
     {
-        Debug.Log("Summoning Blizzard!");
-        // Logic for summoning a blizzard
+        for(int i = 0; i < trapAmount; i ++)
+        {
+            GameObject cocoaTrap = Instantiate(cocoaTrapPrefab, throwPoint.position, Quaternion.identity);
+            Rigidbody2D rb = cocoaTrap.GetComponent<Rigidbody2D>();
+
+            // Adjust the throw direction for better central landing
+            Vector2 throwDirection = new Vector2(Random.Range(-0.5f, 0.5f), Random.Range(0.5f, 1f)).normalized;
+            rb.AddForce(throwDirection * throwForce, ForceMode2D.Impulse);
+            StartCoroutine(StopTrap(rb));
+        }
+    }
+
+    private IEnumerator StopTrap(Rigidbody2D trapRb)
+    {
+        yield return new WaitForSeconds(0.75f);
+        trapRb.velocity = Vector2.zero;
+        trapRb.isKinematic = true;
     }
 
     private void PerformFrostNova()
@@ -165,18 +187,22 @@ public class CorruptedSanta : MonoBehaviour
     {
         Debug.Log("Present Barrage!");
         int numberOfPresents = 7; // Adjust the number of presents as needed
+        float spacing = Random.Range(3f, 5f);
+
         for (int i = 0; i < numberOfPresents; i++)
         {
             Vector3 spawnPosition = new Vector3(
-                Random.Range(teleportRangeX - teleportRangeX / 2, teleportOrigin.x + teleportOrigin.x / 2),
+                transform.position.x + (i - numberOfPresents / 2) * spacing, // Adjust horizontal position based on spacing
                 transform.position.y + 5, // Spawn above the Evil Elf
                 0
             );
+
             GameObject present = Instantiate(presentPrefab, spawnPosition, Quaternion.identity);
             Rigidbody2D rb = present.GetComponent<Rigidbody2D>();
             rb.velocity = new Vector2(0, -5f); // Adjust fall speed as needed
         }
     }
+
 
     private void Teleport()
     {
@@ -267,4 +293,26 @@ public class CorruptedSanta : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(teleportOrigin, new Vector3(teleportRangeX, teleportRangeY, 0));
     }
+
+    private void FacePlayer()
+    {
+        if (player != null)
+        {
+            Vector3 direction = player.position - transform.position;
+
+            if (direction.x > 0)
+            {
+                Vector3 localScale = transform.localScale;
+                localScale.x = Mathf.Abs(localScale.x); // Face right
+                transform.localScale = localScale;
+            }
+            else if (direction.x < 0)
+            {
+                Vector3 localScale = transform.localScale;
+                localScale.x = -Mathf.Abs(localScale.x); // Face left
+                transform.localScale = localScale;
+            }
+        }
+    }
+
 }

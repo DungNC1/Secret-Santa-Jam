@@ -75,7 +75,7 @@ public class FrostNova : MonoBehaviour
                 PlayerHealth playerHealth = collider.GetComponent<PlayerHealth>();
                 if (playerHealth != null)
                 {
-                    playerHealth.TakeDamage(damage);
+                    playerHealth.TakeDamage(damage, transform);
                 }
 
                 PlayerMovement playerMovement = collider.GetComponent<PlayerMovement>();

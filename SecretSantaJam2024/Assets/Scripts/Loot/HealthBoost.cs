@@ -20,7 +20,7 @@ public class HealthBoost : MonoBehaviour
             switch(boostType)
             {
                 case Boost.Health:
-                    collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(-1);
+                    collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(-1, transform);
                     break;
                 case Boost.Mana:
                     collision.gameObject.GetComponent<PlayerMana>().RestoreMana(20);

@@ -26,7 +26,7 @@ public class Present : MonoBehaviour
             PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
             if (playerHealth != null)
             {
-                playerHealth.TakeDamage((int)damage);
+                playerHealth.TakeDamage((int)damage,transform);
             }
             Destroy(gameObject);
         }
