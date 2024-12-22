@@ -156,7 +156,7 @@ MonoBehaviour:
   cocoaTrapPrefab: {fileID: 7251312372013917693, guid: e092fd22812d65748b41b99d409e7ac8, type: 3}
   throwPoint: {fileID: 5523101249785626581}
   trapThrowForce: 10
-  trapAmount: 0
+  trapAmount: 3
 --- !u!61 &27717243449988181
 BoxCollider2D:
   m_ObjectHideFlags: 0
