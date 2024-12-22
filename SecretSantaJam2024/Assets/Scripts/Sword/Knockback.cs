@@ -17,10 +17,13 @@ public class Knockback : MonoBehaviour
     public void GetKnockedBack(Transform damageSource, float knockBackThrust)
     {
         gettingKnockedBack = true;
-        Vector2 difference = (transform.position - damageSource.position).normalized * knockBackThrust * rb.mass;
+        if(damageSource != null)
+        {
+            Vector2 difference = (transform.position - damageSource.position).normalized * knockBackThrust * rb.mass;
 
-        rb.AddForce(difference, ForceMode2D.Impulse);
-        StartCoroutine(KnockRoutine());
+            rb.AddForce(difference, ForceMode2D.Impulse);
+            StartCoroutine(KnockRoutine());
+        }
     }
 
     private IEnumerator KnockRoutine()

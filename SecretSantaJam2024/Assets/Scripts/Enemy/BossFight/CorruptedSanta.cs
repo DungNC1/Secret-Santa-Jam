@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class CorruptedSanta : MonoBehaviour
 {
@@ -35,6 +36,9 @@ public class CorruptedSanta : MonoBehaviour
     [Header("Candy Cane")]
     [SerializeField] private GameObject candyCaneBouncePrefab;
     [SerializeField] private int spawnAmount = 5;
+
+    [Header("Present")]
+    [SerializeField] private GameObject presentPrefab;
 
     private float skillCooldown;
     private float skillTimer;
@@ -86,7 +90,7 @@ public class CorruptedSanta : MonoBehaviour
                 SummonShadowElves();
                 break;
             case 5:
-                DropDarkGifts();
+                PresentBarrage();
                 break;
             case 6:
                 Teleport();
@@ -157,10 +161,21 @@ public class CorruptedSanta : MonoBehaviour
         }
     }
 
-    private void DropDarkGifts()
+    private void PresentBarrage()
     {
-        Debug.Log("Dropping Dark Gifts!");
-        // Logic for dropping dark gifts
+        Debug.Log("Present Barrage!");
+        int numberOfPresents = 7; // Adjust the number of presents as needed
+        for (int i = 0; i < numberOfPresents; i++)
+        {
+            Vector3 spawnPosition = new Vector3(
+                Random.Range(teleportRangeX - teleportRangeX / 2, teleportOrigin.x + teleportOrigin.x / 2),
+                transform.position.y + 5, // Spawn above the Evil Elf
+                0
+            );
+            GameObject present = Instantiate(presentPrefab, spawnPosition, Quaternion.identity);
+            Rigidbody2D rb = present.GetComponent<Rigidbody2D>();
+            rb.velocity = new Vector2(0, -5f); // Adjust fall speed as needed
+        }
     }
 
     private void Teleport()
