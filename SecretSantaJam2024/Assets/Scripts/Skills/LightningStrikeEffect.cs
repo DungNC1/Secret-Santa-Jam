@@ -5,9 +5,9 @@ public class LightningStrikeEffect : MonoBehaviour
     public float duration = 0.5f; // Duration of the effect
     public int damage = 4;
 
-    void Start()
+    private void Start()
     {
-        Destroy(gameObject, duration); // Destroy the effect after the specified duration
+        Destroy(gameObject, duration);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -30,5 +30,10 @@ public class LightningStrikeEffect : MonoBehaviour
     public void SetTarget(Vector3 targetPosition)
     {
         transform.position = targetPosition;
+    }
+
+    public void DestroySelf()
+    {
+        Destroy(gameObject);
     }
 }

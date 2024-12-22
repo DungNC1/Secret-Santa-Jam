@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -108,7 +108,595 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: lightning_ver_2_-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 347
+        width: 16
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2407f6f9503c5ca449b57ea3d606a9e6
+      internalID: 1487144950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lightning_ver_2_-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 347
+        width: 26
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65e6de355d76e7f4faf625f7a1372175
+      internalID: 1870757562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lightning_ver_2_-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 347
+        width: 30
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 322c295a02329db4f97a06d294089d5e
+      internalID: 1940001949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lightning_ver_2_-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 305
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25550b1659231da499160ca72e59c920
+      internalID: 1682340672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lightning_ver_2_-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 258
+        width: 34
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cda79c48316c11f43a4847abceddcd58
+      internalID: -513120452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lightning_ver_2_-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 90
+        width: 64
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7dbf4d929883f241afa39c6fdc0c654
+      internalID: 1412363492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lightning_ver_2_-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 258
+        width: 34
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcbec4ff4649f8b49a8d90281429594c
+      internalID: 1363645327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lightning_ver_2_-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 178
+        width: 34
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cbc5ca5ef47588488f5cc5a2f2e6e59
+      internalID: -1704794256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lightning_ver_2_-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 258
+        width: 34
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c260f0f47d9e6804cb68d2ade6b56239
+      internalID: 1960233817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lightning_ver_2_-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 89
+        width: 34
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9a59aabd9eb5d54e95923e4a3bfdb9b
+      internalID: -335460018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lightning_ver_2_-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 89
+        width: 34
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c39a63b9f351ad4dbbc0c2eaa3885ce
+      internalID: -1191582070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lightning_ver_2_-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 22
+        width: 34
+        height: 153
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 434cdc2ccb95cde47a57413ac493694b
+      internalID: -527508257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lightning_ver_2_-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 89
+        width: 34
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e79cf139a3ff664c8e84ade34c9ce29
+      internalID: -1519937106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lightning_ver_2_-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 0
+        width: 34
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9a7aee8818386e479a2de9c4d52050d
+      internalID: 1040793958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lightning_ver_2_-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 75
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0b7dbcc38a48dc4cb9b86332864bfbe
+      internalID: -58160159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lightning_ver_2_-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 79
+        width: 16
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca62aa5726de92b4eb26ba3b30acbeb2
+      internalID: 700761499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lightning_ver_2_-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 58
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1801b2db582c5a46b6ef517c85b6744
+      internalID: -651745323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lightning_ver_2_-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 42
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48b33226e8606bc468796811b6412083
+      internalID: 280531087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lightning_ver_2_-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 65
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10fd9a95fa87d5245a6c369cc71c3a55
+      internalID: 2081304431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lightning_ver_2_-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 53
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a113e3d33b7ea740b078b9105368dd2
+      internalID: 228556520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lightning_ver_2_-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 64
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1ea62aeec5ceab41805e59ca4dbeba7
+      internalID: 456651843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lightning_ver_2_-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 65
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 030ac116003e0df45ba9b3f883de4204
+      internalID: 533967609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lightning_ver_2_-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 37
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ec30e22b357bb148bcb1c686a3b9957
+      internalID: 1614701149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lightning_ver_2_-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 43
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 770de42b800444441852e112310bdd7f
+      internalID: 1466347389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lightning_ver_2_-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 21
+        width: 13
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 989d193e985508845910704b277845f8
+      internalID: -1427417481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lightning_ver_2_-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 43
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b985a746daca348428972dc68d7392ba
+      internalID: 1624578032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lightning_ver_2_-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 0
+        width: 20
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6597c957b4319044a21bbb63950cd45
+      internalID: -1496843127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lightning_ver_2_-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 18
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2ee0bf072dacb54ea4505451bf21cb1
+      internalID: 359685446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +707,35 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lightning_ver_2_-Sheet_0: 1487144950
+      lightning_ver_2_-Sheet_1: 1870757562
+      lightning_ver_2_-Sheet_10: -1191582070
+      lightning_ver_2_-Sheet_11: -527508257
+      lightning_ver_2_-Sheet_12: -1519937106
+      lightning_ver_2_-Sheet_13: 1040793958
+      lightning_ver_2_-Sheet_14: -58160159
+      lightning_ver_2_-Sheet_15: 700761499
+      lightning_ver_2_-Sheet_16: -651745323
+      lightning_ver_2_-Sheet_17: 280531087
+      lightning_ver_2_-Sheet_18: 2081304431
+      lightning_ver_2_-Sheet_19: 228556520
+      lightning_ver_2_-Sheet_2: 1940001949
+      lightning_ver_2_-Sheet_20: 456651843
+      lightning_ver_2_-Sheet_21: 533967609
+      lightning_ver_2_-Sheet_22: 1614701149
+      lightning_ver_2_-Sheet_23: 1466347389
+      lightning_ver_2_-Sheet_24: -1427417481
+      lightning_ver_2_-Sheet_25: 1624578032
+      lightning_ver_2_-Sheet_26: -1496843127
+      lightning_ver_2_-Sheet_27: 359685446
+      lightning_ver_2_-Sheet_3: 1682340672
+      lightning_ver_2_-Sheet_4: -513120452
+      lightning_ver_2_-Sheet_5: 1412363492
+      lightning_ver_2_-Sheet_6: 1363645327
+      lightning_ver_2_-Sheet_7: -1704794256
+      lightning_ver_2_-Sheet_8: 1960233817
+      lightning_ver_2_-Sheet_9: -335460018
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

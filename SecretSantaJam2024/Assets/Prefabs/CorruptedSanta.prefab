@@ -144,7 +144,7 @@ MonoBehaviour:
   startingDistance: 0.1
   burstInterval: 0.5
   player: {fileID: 0}
-  elfPrefab: {fileID: 0}
+  elfPrefab: {fileID: 1781041508894157605, guid: 67fd4307a5cdf104e80206c41bb75b40, type: 3}
   numberOfElves: 3
   spawnRadius: 2
   soulShieldPrefab: {fileID: 8878681907177929252, guid: a74465db8af50164391537c71ec18995, type: 3}

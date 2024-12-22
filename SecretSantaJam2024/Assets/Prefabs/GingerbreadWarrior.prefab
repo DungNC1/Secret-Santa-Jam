@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8498851989864942020}
   - component: {fileID: 4065652937366409240}
   - component: {fileID: 4454811066885197511}
+  - component: {fileID: 7107862037679217626}
   m_Layer: 7
   m_Name: GingerbreadWarrior
   m_TagString: Enemy
@@ -79,8 +80,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 1, g: 0.84902006, b: 0.28490567, a: 1}
+  m_Sprite: {fileID: 607710262, guid: c28979d0b07f9f54fa8290386c650e20, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -105,9 +106,8 @@ MonoBehaviour:
   candyCaneDamage: 2
   marshmallowMinionPrefab: {fileID: 6665338079419921538, guid: 058f467139c437c43848df325ddbc78c, type: 3}
   smallerGingerbreadWarriorPrefab: {fileID: 8912809874329287224, guid: 56e0c2c7366a377408dd6259e3dd24a7, type: 3}
+  bouncingCandyPrefab: {fileID: 9068360080694418565, guid: a89490c6af021ed40a5ada493845fa95, type: 3}
   spawnRadius: 3
-  maxMarshmallowMinions: 10
-  maxSmallerGingerbreadWarriors: 5
   moveSpeed: 2
   moveInterval: 3
 --- !u!50 &8625621853244578901
@@ -215,3 +215,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whiteFlashMat: {fileID: 2100000, guid: 931b2007dd485e846b074156be7d9bbc, type: 2}
   restoreDefaultMatTime: 0.2
+--- !u!95 &7107862037679217626
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4682343938198470195}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 58c2cf45933cacb4ab6de6850080e9d1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
