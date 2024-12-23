@@ -64,7 +64,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.1900005, y: -0.0027914047, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5523101249785626581}
@@ -111,8 +111,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0, g: 0.79630995, b: 1, a: 1}
+  m_Sprite: {fileID: -828346475, guid: ea0d7a93a4300c54d8c82f9a6031098e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -134,9 +134,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b06b246bc18ef24ca0a8ea814f091a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleportRangeX: 23
-  teleportRangeY: 7
-  teleportOrigin: {x: 0, y: 0.5, z: 0}
+  teleportRangeX: 30
+  teleportRangeY: 15
+  teleportOrigin: {x: 77, y: -46, z: 0}
   candyPrefab: {fileID: 4314382591805644601, guid: 703201b90f62b6d4eaba1906b2dce00e, type: 3}
   throwForce: -5
   candiesPerBurst: 5
@@ -189,18 +189,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.006103039, y: 0.024411708}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 2}
+    oldSize: {x: 0.75, y: 1.375}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.69485474, y: 1.5117671}
   m_EdgeRadius: 0
 --- !u!50 &6120430802901933335
 Rigidbody2D:
